@@ -93,7 +93,7 @@ const useStyles = makeStyles({
   job: {
     fontSize: "14px",
     lineHeight: "24px",
-    color: "#f9e1c3",
+    color: "#fff",
     margin: 0
   },
   content: {

@@ -26,10 +26,11 @@ const useStyles = makeStyles({
     },
     logoGroup: {
         display: "flex",
+        marginLeft:"-9px",
         '@media (max-width: 350px)': {
             display: "block",
             with: "100%",
-            marginLeft:"-8px"
+            
            
         },
     },
