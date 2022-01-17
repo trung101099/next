@@ -156,7 +156,7 @@ const SideBarTop = () => {
     <Box className={classes.headerTop}>
       <Container>
         <Grid container spacing={2} >
-          <Grid item sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }} md={6}>
+          <Grid  md={6}>
             <Box>
               <ul className={classes.menuTop}>
                 <li >Call Support Free:1800123456</li>
