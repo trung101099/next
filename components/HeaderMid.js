@@ -121,7 +121,8 @@ const useStyle_searchHeader = makeStyles({
 
 
 
-const HeaderMid = (props) => {
+
+export default function HeaderMid(){
 
     const router = useRouter();
     // const handleSubmit = (value) => {
@@ -163,64 +164,59 @@ const HeaderMid = (props) => {
     const classes = useStyle_searchHeader();
 
     return (
-        <>
+        
         <AppProvider>
             <Box className={classes.HeaderMidItem}>
-                <React.Fragment>
-                    <Container maxWidth="lg">
-                        <Box sx={{ flexGrow: 1 }}>
-                            <Grid container>
-                                <Grid item xs={12} sm={12} md={3}>
-                                    <Box className={classes.logo}>
-                                        <Link href='/'>
-                                            <a>
-                                                <img src={LogoeBay.src} />
-                                            </a>
-                                        </Link>
-                                    </Box>
-                                </Grid>
-                                <Grid item xs={9} sm={10} md={8}>
-                                    <form className={classes.SearchHeader} id="searchform" onSubmit={handleSubmit}>
-                                        <select onChange={e => changeSearchQuery(e)} name="">
-                                            <option value="">Shop by category</option>
-                                            <option value="">Uncategorized</option>
-                                            <option value="Smartphone">---Beauty, Health</option>
-                                            <option value="Books">---Book---</option>
-                                            <option value="Computer">---Computer</option>
-                                            <option value="Electronis">---Electricis---</option>
-                                            <option value="Fashion">---Fashion</option>
-                                            <option value="Food">---Food---</option>
-                                            <option value="Jewelry">---Jewelry</option>
-                                            <option value="Smartphone">---Smartphone---</option>
-                                            <option value="Sports">---Sport</option>
-
-                                        </select>
-                                        <input
-                                            type="text"
-                                            placeholder="What are you looking for..."
-                                            value={searchQuery}
-                                            onChange={(event) => setSearchQuery(event?.target?.value)}
-                                        />
-
-                                        <Button type="submit" onClick={handleSubmit}><SearchOutlinedIcon /></Button>
-
-                                    </form>
-                                </Grid>
-                                <Grid item xs={3} sm={2} md={1}>
-                                    <Box className={classes.boxCart}>
-                                        <a className={classes.cartHeader}>
-                                            <CartIcon />
-                                           
+                <Container maxWidth="lg">
+                    <Box sx={{ flexGrow: 1 }}>
+                        <Grid container>
+                            <Grid item xs={12} sm={12} md={3}>
+                                <Box className={classes.logo}>
+                                    <Link href='/'>
+                                        <a>
+                                            <img src={LogoeBay.src} />
                                         </a>
-                                    </Box>
-                                </Grid>
+                                    </Link>
+                                </Box>
                             </Grid>
-                        </Box>
-                    </Container>
-                </React.Fragment>
+                            <Grid item xs={9} sm={10} md={8}>
+                                <form className={classes.SearchHeader} id="searchform" onSubmit={handleSubmit}>
+                                    <select onChange={e => changeSearchQuery(e)} name="">
+                                        <option value="">Shop by category</option>
+                                        <option value="">Uncategorized</option>
+                                        <option value="Smartphone">---Beauty, Health</option>
+                                        <option value="Books">---Book---</option>
+                                        <option value="Computer">---Computer</option>
+                                        <option value="Electronis">---Electricis---</option>
+                                        <option value="Fashion">---Fashion</option>
+                                        <option value="Food">---Food---</option>
+                                        <option value="Jewelry">---Jewelry</option>
+                                        <option value="Smartphone">---Smartphone---</option>
+                                        <option value="Sports">---Sport</option>
+                                    </select>
+                                    <input
+                                        type="text"
+                                        placeholder="What are you looking for..."
+                                        value={searchQuery}
+                                        onChange={(event) => setSearchQuery(event?.target?.value)}
+                                    />
+                                    <Button type="submit" onClick={handleSubmit}><SearchOutlinedIcon /></Button>
+                                </form>
+                            </Grid>
+                            <Grid item xs={3} sm={2} md={1}>
+                                <Box className={classes.boxCart}>
+                                    <a className={classes.cartHeader}>
+                                        <CartIcon />
+                                        
+                                    </a>
+                                </Box>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Container>  
             </Box>
             </AppProvider>
-        </>
+        
     );
 };
 
@@ -246,6 +242,3 @@ export async function getStaticProps() {
         revalidate: 1,
     };
 }
-
-
-export default HeaderMid;
