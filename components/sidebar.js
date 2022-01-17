@@ -24,9 +24,11 @@ const useStyle_HeaderTop = makeStyles({
     backgroundColor: '#f3f3f3',
   },
   menuTop: {
-    listStyle: 'none',
-    padding: '0px',
-    margin: '0px',
+    '& ul':{
+      listStyle: 'none',
+      padding: '0px',
+      margin: '0px',
+    },
     '& li': {
       color:"#999",
       float: 'left',
@@ -131,23 +133,19 @@ const useStyle_HeaderTop = makeStyles({
     }
   },
   curency: {
-    '& select': {
       paddingRight: '15px',
       background: 'transparent',
       appearance: 'none',
       backgroundImage: `url(${arrow_down.src})`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'right 1px top 6px;',
-    }
   },
   language: {
-    '& select': {
       background: 'transparent',
       appearance: 'none',
       backgroundImage: `url(${arrow_down.src})`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'right 1px top 7px;',
-    }
   }
 });
 
@@ -159,8 +157,8 @@ const SideBarTop = () => {
       <Container>
         <Grid container spacing={2} >
           <Grid item sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }} md={6}>
-            <Box>
-              <ul className={classes.menuTop}>
+            <Box className={classes.menuTop}>
+              <ul >
                 <li >Call Support Free:1800123456</li>
               </ul>
             </Box>
@@ -168,15 +166,15 @@ const SideBarTop = () => {
           <Grid item xs={12} sm={12} md={6} >
             <Box className={classes.headerTopRight}>
               <ul >
-                <li className={classes.curency}>
-                  <select>
+                <li >
+                  <select className={classes.curency}>
                     <option value="">USD, $</option>
                     <option value="">EUR, €</option>
                   </select>
                 </li>
-                <li className={classes.language}>
+                <li >
                   <LanguageIcon />
-                  <select>
+                  <select className={classes.language}>
                     <option value="">English</option>
                     <option value="">Viet Nam</option>
                   </select>
