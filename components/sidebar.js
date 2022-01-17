@@ -149,8 +149,9 @@ const useStyle_HeaderTop = makeStyles({
   }
 });
 
-const SideBarTop = () => {
+export default function SideBarTop(){
   const classes = useStyle_HeaderTop()
+ 
   return (
     <>
     <Box className={classes.headerTop}>
@@ -188,4 +189,4 @@ const SideBarTop = () => {
     </>
   );
 }
-export default SideBarTop;
+
