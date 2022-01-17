@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Box, Grid } from '@mui/material';
+import { Container, Box, Grid, Button } from '@mui/material';
 import { AppProvider } from '../libs/context/AppContext';
 // import icon
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -165,19 +165,19 @@ const HeaderMid = (props) => {
     return (
         <>
         <AppProvider>
-            <div className={classes.HeaderMidItem}>
+            <Box className={classes.HeaderMidItem}>
                 <React.Fragment>
                     <Container maxWidth="lg">
                         <Box sx={{ flexGrow: 1 }}>
                             <Grid container>
                                 <Grid item xs={12} sm={12} md={3}>
-                                    <div className={classes.logo}>
+                                    <Box className={classes.logo}>
                                         <Link href='/'>
                                             <a>
                                                 <img src={LogoeBay.src} />
                                             </a>
                                         </Link>
-                                    </div>
+                                    </Box>
                                 </Grid>
                                 <Grid item xs={9} sm={10} md={8}>
                                     <form className={classes.SearchHeader} id="searchform" onSubmit={handleSubmit}>
@@ -202,23 +202,23 @@ const HeaderMid = (props) => {
                                             onChange={(event) => setSearchQuery(event?.target?.value)}
                                         />
 
-                                        <button type="submit" onClick={handleSubmit}><SearchOutlinedIcon /></button>
+                                        <Button type="submit" onClick={handleSubmit}><SearchOutlinedIcon /></Button>
 
                                     </form>
                                 </Grid>
                                 <Grid item xs={3} sm={2} md={1}>
-                                    <div className={classes.boxCart}>
+                                    <Box className={classes.boxCart}>
                                         <a className={classes.cartHeader}>
                                             <CartIcon />
                                            
                                         </a>
-                                    </div>
+                                    </Box>
                                 </Grid>
                             </Grid>
                         </Box>
                     </Container>
                 </React.Fragment>
-            </div>
+            </Box>
             </AppProvider>
         </>
     );
