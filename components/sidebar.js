@@ -58,10 +58,12 @@ const useStyle_HeaderTop = makeStyles({
     }
   },
   headerTopRight: {
-    listStyle: 'none',
-    padding: '0px',
-    margin: '0px',
-    float: 'right',
+    '& ul':{
+      listStyle: 'none',
+      padding: '0px',
+      margin: '0px',
+      float: 'right',
+    },
     '& li': {
       float: 'left',
       padding: '0px 10px',
@@ -156,7 +158,7 @@ const SideBarTop = () => {
     <Box className={classes.headerTop}>
       <Container>
         <Grid container spacing={2} >
-          <Grid  md={6}>
+          <Grid item sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }} md={6}>
             <Box>
               <ul className={classes.menuTop}>
                 <li >Call Support Free:1800123456</li>
@@ -164,8 +166,8 @@ const SideBarTop = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={12} md={6} >
-            <Box>
-              <ul className={classes.headerTopRight}>
+            <Box className={classes.headerTopRight}>
+              <ul >
                 <li className={classes.curency}>
                   <select>
                     <option value="">USD, $</option>
